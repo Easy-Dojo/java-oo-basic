@@ -1,12 +1,12 @@
 package practice10;
 
 import java.util.Iterator;
-import java.util.Set;
+import java.util.List;
 
 public class Teacher extends Person {
-    private Set<Klass> classes;
+    private List<Klass> classes;
 
-    public Teacher(int id,String name, int age, Set<Klass> classes) {
+    public Teacher(int id,String name, int age, List<Klass> classes) {
         super(id,name, age);
         this.classes = classes;
     }
@@ -15,7 +15,7 @@ public class Teacher extends Person {
         super(id,name, age);
     }
 
-    public Set<Klass> getClasses() {
+    public List<Klass> getClasses() {
         return classes;
     }
 

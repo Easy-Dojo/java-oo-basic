@@ -1,6 +1,9 @@
 package practice11;
 
 import com.google.common.collect.Sets;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -96,7 +99,7 @@ public class Practice11Test {
 
     @Test
     public void should_teacher_have_name_and_age_and_classes() throws Exception {
-        Teacher tom = new Teacher(1, "Tom", 21, Sets.newHashSet(klass2));
+        Teacher tom = new Teacher(1, "Tom", 21, Arrays.asList(klass2));
         assertThat(tom.getName()).isEqualTo("Tom");
         assertThat(tom.getAge()).isEqualTo(21);
         assertThat(tom.getClasses().size()).isEqualTo(1);
@@ -106,7 +109,7 @@ public class Practice11Test {
     @Test
     public void should_teacher_introduce_itself_with_which_classes_it_teaches() throws Exception {
         Klass klass3 = new Klass(3);
-        Teacher tom = new Teacher(1, "Tom", 21, Sets.newHashSet(klass2, klass3));
+        Teacher tom = new Teacher(1, "Tom", 21, Arrays.asList(klass2,klass3));
         assertThat(tom.introduce()).isEqualTo("My name is Tom. I am 21 years old. I am a Teacher. I teach Class 2, 3.");
     }
 
@@ -119,7 +122,7 @@ public class Practice11Test {
     @Test
     public void should_teacher_isTeaching_return_true_when_the_student_is_in_any_classes_the_teacher_teaches() throws Exception {
         Klass klass3 = new Klass(3);
-        Teacher tom = new Teacher(1, "Tom", 21, Sets.newHashSet(klass2, klass3));
+        Teacher tom = new Teacher(1, "Tom", 21, Arrays.asList(klass2,klass3));
         Student jerry = new Student(1, "Jerry", 8, klass2);
 
         assertThat(tom.isTeaching(jerry)).isTrue();
@@ -127,7 +130,7 @@ public class Practice11Test {
 
     @Test
     public void should_teacher_isTeaching_return_false_when_the_student_is_not_in_all_the_classes_the_teacher_teaches() throws Exception {
-        Teacher tom = new Teacher(1, "Tom", 21, Sets.newHashSet(klass2));
+        Teacher tom = new Teacher(1, "Tom", 21, Arrays.asList(klass2));
         Student jerry = new Student(1, "Jerry", 8, new Klass(3));
 
         assertThat(tom.isTeaching(jerry)).isFalse();
@@ -135,21 +138,21 @@ public class Practice11Test {
 
     @Test
     public void should_teacher_introduce_a_student_it_teaches() throws Exception {
-        Teacher tom = new Teacher(1, "Tom", 21, Sets.newHashSet(klass2));
+        Teacher tom = new Teacher(1, "Tom", 21, Arrays.asList(klass2));
         Student jerry = new Student(1, "Jerry", 8, klass2);
         assertThat(tom.introduceWith(jerry)).isEqualTo("My name is Tom. I am 21 years old. I am a Teacher. I teach Jerry.");
     }
 
     @Test
     public void should_teacher_introduce_a_student_it_does_not_teach() throws Exception {
-        Teacher tom = new Teacher(1, "Tom", 21, Sets.newHashSet(new Klass(1)));
+        Teacher tom = new Teacher(1, "Tom", 21, Arrays.asList(new Klass(1)));
         Student jerry = new Student(1, "Jerry", 8, new Klass(2));
         assertThat(tom.introduceWith(jerry)).isEqualTo("My name is Tom. I am 21 years old. I am a Teacher. I don't teach Jerry.");
     }
 
     @Test
     public void should_teacher_be_notified_when_student_join_any_classes_it_teaches() throws Exception {
-        Teacher tom = new Teacher(1, "Tom", 21, Sets.newHashSet(klass2));
+        Teacher tom = new Teacher(1, "Tom", 21, Arrays.asList(klass2));
         Student jerry = new Student(1, "Jerry", 8, new Klass(3));
 
         klass2.appendMember(jerry);
@@ -159,7 +162,7 @@ public class Practice11Test {
 
     @Test
     public void should_teacher_be_notified_when_any_class_it_teaches_assigned_a_leader() throws Exception {
-        Teacher tom = new Teacher(1, "Tom", 21, Sets.newHashSet(klass2));
+        Teacher tom = new Teacher(1, "Tom", 21, Arrays.asList(klass2));
         Student jerry = new Student(1, "Jerry", 8, new Klass(3));
 
         klass2.appendMember(jerry);

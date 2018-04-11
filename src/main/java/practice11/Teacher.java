@@ -1,12 +1,12 @@
 package practice11;
 
 import java.util.Iterator;
-import java.util.Set;
+import java.util.List;
 
 public class Teacher extends Person implements BroadcastJoinListener, BroadcastLeaderListener {
-    private Set<Klass> classes;
+    private List<Klass> classes;
 
-    public Teacher(int id,String name, int age, Set<Klass> classes) {
+    public Teacher(int id,String name, int age, List<Klass> classes) {
         super(id,name, age);
         this.classes = classes;
         for (Klass klass : classes) {
@@ -19,7 +19,7 @@ public class Teacher extends Person implements BroadcastJoinListener, BroadcastL
         super(id,name, age);
     }
 
-    public Set<Klass> getClasses() {
+    public List<Klass> getClasses() {
         return classes;
     }
 
