@@ -1,9 +1,9 @@
 package practice07;
 
 public class Klass {
-    private int klassCode;
+    private Integer klassCode;
 
-    public int getNumber() {
+    public Integer getNumber() {
         return klassCode;
     }
 
@@ -11,11 +11,11 @@ public class Klass {
         return "Class " + klassCode;
     }
 
-    public void setKlassCode(int klassCode) {
+    public void setKlassCode(Integer klassCode) {
         this.klassCode = klassCode;
     }
 
-    public Klass(int klassCode) {
+    public Klass(Integer klassCode) {
         this.klassCode = klassCode;
     }
 }

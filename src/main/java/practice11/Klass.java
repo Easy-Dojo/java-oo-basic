@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Klass {
-    private int klassCode;
+    private Integer klassCode;
     private Student leader;
     private List<BroadcastJoinListener> joinObservers = new ArrayList<BroadcastJoinListener>();
     private List<BroadcastLeaderListener> leaderObservers = new ArrayList<BroadcastLeaderListener>();
@@ -24,7 +24,7 @@ public class Klass {
         return leader;
     }
 
-    public int getNumber() {
+    public Integer getNumber() {
         return klassCode;
     }
 
@@ -32,7 +32,7 @@ public class Klass {
         return "Class " + klassCode;
     }
 
-    public Klass(int klassCode) {
+    public Klass(Integer klassCode) {
         this.klassCode = klassCode;
         this.joinObservers = new ArrayList<>();
         this.leaderObservers = new ArrayList<>();

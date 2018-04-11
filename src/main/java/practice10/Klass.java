@@ -1,7 +1,7 @@
 package practice10;
 
 public class Klass {
-    private int klassCode;
+    private Integer klassCode;
     private Student leader;
 
     public void assignLeader(Student student){
@@ -16,7 +16,7 @@ public class Klass {
         return leader;
     }
 
-    public int getNumber() {
+    public Integer getNumber() {
         return klassCode;
     }
 
@@ -28,7 +28,7 @@ public class Klass {
         this.klassCode = klassCode;
     }
 
-    public Klass(int klassCode) {
+    public Klass(Integer klassCode) {
         this.klassCode = klassCode;
     }
 

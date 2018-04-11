@@ -21,10 +21,10 @@ public class Teacher extends Person {
     }
 
     public String introduceWith(Student student){
-        int studentKlassNumber =  student.getKlass().getNumber();
-        int teacherKlassNumber =  this.getKlass().getNumber();
+        Integer studentKlassNumber =  student.getKlass().getNumber();
+        Integer teacherKlassNumber =  this.getKlass().getNumber();
         String words = String.format("My name is %s. I am %d years old. I am a Teacher.", this.getName(), this.getAge());
-        words += studentKlassNumber==teacherKlassNumber? String.format(" I teach %s.",student.getName()) : String.format(" I don't teach %s.",student.getName());
+        words += studentKlassNumber.compareTo(teacherKlassNumber)==0? String.format(" I teach %s.",student.getName()) : String.format(" I don't teach %s.",student.getName());
         return words;
     }
 

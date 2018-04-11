@@ -16,7 +16,7 @@ public class Student extends Person {
         this.klass = klass;
     }
 
-    public boolean isClassLeader() {
+    private boolean isClassLeader() {
         Student classLeader =  klass.getLeader();
         return this.equals(classLeader);
     }
