@@ -1,7 +1,5 @@
 package practice10;
 
-import com.google.common.collect.Sets;
-import java.util.ArrayList;
 import java.util.Arrays;
 import org.junit.Before;
 import org.junit.Test;

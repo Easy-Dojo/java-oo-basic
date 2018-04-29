@@ -1,38 +1,39 @@
 package practice10;
 
 public class Klass {
-    private Integer klassCode;
-    private Student leader;
 
-    public void assignLeader(Student student){
-        if (student.getKlass().equals(this)) {
-            this.leader = student;
-        } else {
-            System.out.println("It is not one of us.");
-        }
-    }
+  private Integer klassCode;
+  private Student leader;
 
-    public Student getLeader() {
-        return leader;
+  public void assignLeader(Student student) {
+    if (student.getKlass().equals(this)) {
+      this.leader = student;
+    } else {
+      System.out.println("It is not one of us.");
     }
+  }
 
-    public Integer getNumber() {
-        return klassCode;
-    }
+  public Student getLeader() {
+    return leader;
+  }
 
-    public String getDisplayName(){
-        return "Class " + klassCode;
-    }
+  public Integer getNumber() {
+    return klassCode;
+  }
 
-    public void setKlassCode(int klassCode) {
-        this.klassCode = klassCode;
-    }
+  public String getDisplayName() {
+    return "Class " + klassCode;
+  }
 
-    public Klass(Integer klassCode) {
-        this.klassCode = klassCode;
-    }
+  public void setKlassCode(int klassCode) {
+    this.klassCode = klassCode;
+  }
 
-    public void appendMember(Student student) {
-        student.setKlass(this);
-    }
+  public Klass(Integer klassCode) {
+    this.klassCode = klassCode;
+  }
+
+  public void appendMember(Student student) {
+    student.setKlass(this);
+  }
 }
