@@ -16,14 +16,14 @@ public class Student extends Person {
         this.klass = klass;
     }
 
-    public boolean isClassLeader() {
+    private boolean isClassLeader() {
         Student classLeader =  klass.getLeader();
         return this.equals(classLeader);
     }
 
     @Override
     public String introduce() {
-        String words = super.introduce() + String.format(" I am a Student.");
+        String words = super.introduce() + " I am a Student.";
         words += this.isClassLeader() ? String.format(" I am Leader of %s.", this.getKlass().getDisplayName()) : String.format(" I am at %s.", this.getKlass().getDisplayName());
         return words;
     }

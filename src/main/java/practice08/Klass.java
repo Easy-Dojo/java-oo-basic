@@ -1,30 +1,36 @@
 package practice08;
 
 public class Klass {
-    private Integer klassCode;
-    private Student leader;
 
-    public void assignLeader(Student student){
-        this.leader = student;
-    }
+  private Integer number;
 
-    public Student getLeader() {
-        return leader;
-    }
+  private Student leader;
 
-    public Integer getNumber() {
-        return klassCode;
-    }
+  public Klass(Integer number) {
+    this.number = number;
+  }
 
-    public String getDisplayName(){
-        return "Class " + klassCode;
-    }
+  public void setLeader(Student leader) {
+    this.leader = leader;
+  }
 
-    public void setKlassCode(int klassCode) {
-        this.klassCode = klassCode;
-    }
+  public Student getLeader() {
+    return leader;
+  }
 
-    public Klass(Integer klassCode) {
-        this.klassCode = klassCode;
-    }
+  public Integer getNumber() {
+    return number;
+  }
+
+  public void setNumber(int number) {
+    this.number = number;
+  }
+
+  public String getDisplayName() {
+    return "Class " + number;
+  }
+
+  public void assignLeader(Student student) {
+    this.setLeader(student);
+  }
 }
