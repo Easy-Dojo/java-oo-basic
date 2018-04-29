@@ -25,7 +25,7 @@ public class Teacher extends Person {
   public String introduce() {
     String words = super.introduce() + " I am a Teacher.";
     words +=
-        this.klass != 0 ? String.format(" I teach Class %d.", this.klass) : " I teach No Class.";
+        this.klass != null ? String.format(" I teach Class %d.", this.klass) : " I teach No Class.";
     return words;
   }
 }

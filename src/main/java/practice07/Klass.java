@@ -1,21 +1,18 @@
 package practice07;
 
 public class Klass {
-    private Integer klassCode;
 
-    public Integer getNumber() {
-        return klassCode;
-    }
+  private Integer number;
 
-    public String getDisplayName(){
-        return "Class " + klassCode;
-    }
+  public Klass(Integer number) {
+    this.number = number;
+  }
 
-    public void setKlassCode(Integer klassCode) {
-        this.klassCode = klassCode;
-    }
+  public Integer getNumber() {
+    return number;
+  }
 
-    public Klass(Integer klassCode) {
-        this.klassCode = klassCode;
-    }
+  public String getDisplayName() {
+    return "Class " + number;
+  }
 }
