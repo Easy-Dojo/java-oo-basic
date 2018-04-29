@@ -15,7 +15,7 @@ public class Teacher extends Person implements BroadcastJoinListener, BroadcastL
         }
     }
 
-    public Teacher(int id,String name, int age) {
+    public Teacher(Integer id,String name, Integer age) {
         super(id,name, age);
     }
 
@@ -30,27 +30,26 @@ public class Teacher extends Person implements BroadcastJoinListener, BroadcastL
     }
 
     public boolean isTeaching(Student student) {
-        Klass studentClass = student.getKlass();
-        return this.getClasses().contains(studentClass);
+        return this.getClasses().contains(student.getKlass());
     }
 
     @Override
     public String introduce() {
-        String words = super.introduce() + " I am a Teacher.";
+        StringBuilder words = new StringBuilder(super.introduce() + " I am a Teacher.");
         if (this.classes != null) {
-            words += " I teach Class";
+            words.append(" I teach Class");
             Iterator it = this.classes.iterator();
             while (it.hasNext()) {
                 Klass klass= (Klass) it.next();
-                words += String.format(" %d,",klass.getNumber());
+                words.append(String.format(" %d,", klass.getNumber()));
             }
-            char[] items=words.toCharArray();
+            char[] items= words.toString().toCharArray();
             items[items.length-1]='.';
-            words = new String(items);
+            words = new StringBuilder(new String(items));
         }else {
-            words += " I teach No Class.";
+            words.append(" I teach No Class.");
         }
-        return words;
+        return words.toString();
     }
 
     @Override
