@@ -1,7 +1,7 @@
 package practice09;
 
 public class Klass {
-    private Integer klassCode;
+    private Integer number;
     private Student leader;
 
     public void assignLeader(Student student){
@@ -17,19 +17,19 @@ public class Klass {
     }
 
     public Integer getNumber() {
-        return klassCode;
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
+    public Klass(Integer number) {
+        this.number = number;
     }
 
     public String getDisplayName(){
-        return "Class " + klassCode;
-    }
-
-    public void setKlassCode(int klassCode) {
-        this.klassCode = klassCode;
-    }
-
-    public Klass(Integer klassCode) {
-        this.klassCode = klassCode;
+        return "Class " + number;
     }
 
     public void appendMember(Student student) {
